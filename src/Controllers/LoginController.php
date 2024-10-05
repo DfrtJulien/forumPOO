@@ -20,10 +20,10 @@ class LoginController extends AbstractController
         $user = new User(null, null, $mail, $password, null, null);
         $responseGetUser = $user->login($mail);
 
-
         if ($responseGetUser) {
           $passwordUser = $responseGetUser->getPassword();
-
+          var_dump($passwordUser);
+          var_dump($password);
           if (password_verify($password, $passwordUser)) {
             $_SESSION['user'] = [
               'id' => uniqid(),
