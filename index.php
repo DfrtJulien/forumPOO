@@ -10,5 +10,6 @@ $router = new Router();
  *  cette methode prends trois argument, la route, le controller et la methode executé
  */
 $router->addRoute('/', 'HomeController', 'index');
+$router->addRoute('/register', 'RegisterController', 'index');
 
 $router->handleRequest();
