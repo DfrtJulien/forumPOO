@@ -26,8 +26,7 @@ class RegisterController extends AbstractController
         $user->save();
         $this->redirectToRoute('/');
       }
-
-      require_once(__DIR__ . '/../Views/security/register.view.php');
     }
+    require_once(__DIR__ . '/../Views/security/register.view.php');
   }
 }
