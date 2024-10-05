@@ -26,6 +26,9 @@
         <li class="nav-item">
           <a class="nav-link  nav-a" aria-current="page" href="/register">Inscription</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link  nav-a" aria-current="page" href="/login">Connexion</a>
+        </li>
       </ul>
     </div>
   </div>
