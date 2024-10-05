@@ -23,12 +23,24 @@
         <li class="nav-item">
           <a class="nav-link  nav-a" aria-current="page" href="/">Accueil</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link  nav-a" aria-current="page" href="/register">Inscription</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link  nav-a" aria-current="page" href="/login">Connexion</a>
-        </li>
+        <?php
+        if (isset($_SESSION['user'])) {
+        ?>
+          <li class="nav-item">
+            <a class="nav-link  nav-a" aria-current="page" href="/logout">Déconnexion</a>
+          </li>
+        <?php
+        } else {
+        ?>
+          <li class="nav-item">
+            <a class="nav-link  nav-a" aria-current="page" href="/register">Inscription</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  nav-a" aria-current="page" href="/login">Connexion</a>
+          </li>
+        <?php
+        }
+        ?>
       </ul>
     </div>
   </div>
