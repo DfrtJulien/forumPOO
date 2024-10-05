@@ -27,6 +27,15 @@ class User
     $this->id_role = $id_role;
   }
 
+  public function save(): bool
+  {
+    $pdo = DataBase::getConnection();
+    $sql = "INSERT INTO user (id,pseudo,mail,password,register_date,id_role) VALUES (?,?,?,?,?,?)";
+    $statement = $pdo->prepare($sql);
+    return $statement->execute([$this->id, $this->pseudo, $this->mail, $this->password, $this->register_date, $this->id_role]);
+  }
+
+
   public function getId(): ?int
   {
     return $this->id;
