@@ -1,3 +1,14 @@
-<h1 class="text-center">Task'N'Kids</h1>
-<h2 class="text-center">Erreur</h2>
-<button type="button" class="btn btn-warning mx-auto d-block p-3"><a href="/" class="text-light fs-1"> Retour à l'accueil !</a></button>
+<?php
+require_once(__DIR__ . '/../partials/head.php');
+?>
+
+<div class="errorContainer">
+  <h1>Erreur 404</h1>
+  <img src="/public//img//erreur404.png" alt="erreur 404 plus fort que luffy" class="img-error">
+  <button class="errorBtn"><a href="/">Revenir a l'accueil</a></button>
+</div>
+
+
+<?php
+include_once(__DIR__ . '/../partials/footer.php');
+?>
