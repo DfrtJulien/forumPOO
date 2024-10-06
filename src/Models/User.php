@@ -66,6 +66,18 @@ class User
     return $users;
   }
 
+  function getUser($id)
+  {
+    $pdo = DataBase::getConnection();
+    $query = "SELECT `user`.`pseudo`, `user`.`mail`, `user`.`register_date`, `role`.`name`
+    FROM `user`
+    INNER JOIN `role` ON `user`.`id_role` = `role`.`id`
+    WHERE `user`.`id` = ?";
+    $queryStatement = $pdo->prepare($query);
+    $queryStatement->execute([$id]);
+    $row = $queryStatement->fetch(PDO::FETCH_ASSOC);
+    return new User(null, $row['pseudo'], $row['mail'], null, $row['register_date'], null);
+  }
 
   public function getId(): ?int
   {

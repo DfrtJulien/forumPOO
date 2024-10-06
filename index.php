@@ -14,5 +14,6 @@ $router->addRoute('/register', 'RegisterController', 'index');
 $router->addRoute('/login', 'LoginController', 'index');
 $router->addRoute('/logout', 'LogoutController', 'logout');
 $router->addRoute('/users', 'UsersController', 'users');
+$router->addRoute('/profile', 'ProfileController', 'index');
 
 $router->handleRequest();
