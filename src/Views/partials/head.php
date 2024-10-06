@@ -29,9 +29,16 @@
           <li class="nav-item">
             <a class="nav-link  nav-a" aria-current="page" href="/logout">Déconnexion</a>
           </li>
-        <?php
+          <?php
+          if ($_SESSION['user']['idRole'] == 2) {
+          ?>
+            <li class="nav-item">
+              <a class="nav-link  nav-a" aria-current="page" href="/users">Liste des utilisateurs</a>
+            </li>
+          <?php
+          }
         } else {
-        ?>
+          ?>
           <li class="nav-item">
             <a class="nav-link  nav-a" aria-current="page" href="/register">Inscription</a>
           </li>

@@ -51,6 +51,22 @@ class User
     }
   }
 
+  function getUsersRole($value)
+  {
+    $pdo = DataBase::getConnection();
+    $query = "SELECT `pseudo`, `id` FROM `user` WHERE `id_role` = ?";
+    $queryStatement = $pdo->prepare($query);
+    $queryStatement->execute([$value]);
+    $resultFetch =  $queryStatement->fetchAll(PDO::FETCH_ASSOC);
+    $users = [];
+    foreach ($resultFetch as $row) {
+      $user = new User($row['id'], $row['pseudo'], null, null, null, null);
+      $users[] = $user;
+    }
+    return $users;
+  }
+
+
   public function getId(): ?int
   {
     return $this->id;
